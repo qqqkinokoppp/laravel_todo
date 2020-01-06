@@ -30,7 +30,7 @@ Todo管理アプリ
             @if (isset($todo_items))
                 @foreach ($todo_items as $todo_item)
 
-            @if (!isset($todo_item ->finished_date))
+            @if (!isset($todo_item ->finished_date) && $todo_item ->expire_date < date('Y-m-d'))
             {!!'<tr style="background-color:#ffbbbb">'!!}
             @endif
                 <td class="align-left">
